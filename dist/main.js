@@ -5,3 +5,8 @@ const display = function () {
         renderer.render(recipes)
     })
 }
+
+$("#recipes-container").on("click", ".recipe-image", function() {
+    alert($(this).siblings(".ingredients").find("li").html());
+  })
+  

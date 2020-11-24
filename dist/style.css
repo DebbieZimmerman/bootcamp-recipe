@@ -1,0 +1,90 @@
+body {
+    margin-left: 15vw;
+    margin-right: 15vw;
+}
+
+#input-container {
+    margin-bottom: 1vw;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+    grid-template-areas: "i s";
+    grid-column-gap: 1vw;
+    font-family: Helvetica;
+}
+
+#input {
+   border-style: ridge;
+    font-size: x-large;
+    grid-area: i;
+    font-family: Helvetica;
+}
+
+button {
+    grid-area: s;
+    display: grid;
+    font-family: Helvetica;
+    align-content: center;
+    background-color:black;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+div {
+    font-family: Helvetica;
+}
+
+#recipes-container {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1fr);
+    
+    align-content: center;
+    justify-content: center;
+}
+
+.recipe {
+    display: grid;
+    grid-template-areas: "t t" "i p";
+    grid-template-columns: repeat(2, 1fr);
+    padding: 3%;
+    background-color: #FFFFFF;
+    border-radius: 7%;
+    border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+
+.title {
+    grid-area: t;
+    color: black;
+}
+
+div {
+    font-size: medium;
+    font-weight: 600;
+}
+
+ul {
+    font-size: small;
+    font-weight: normal;
+}
+
+.ingredients {
+    grid-area: i;
+}
+
+.recipe-image {
+    grid-area: p;
+    justify-content: left;
+    align-content: center;
+    object-fit: scale-down;
+    max-width: 10vw;
+}
+
+img {
+    justify-self: left;
+    align-self: center;
+    height: 200px;
+    width: auto;
+}
