@@ -12,9 +12,16 @@ app.get('/sanity', function (request, response) {
 
 app.get('/recipes/:ingredient', function (request, response) {
     const ingredient = request.params.ingredient
-        urllib.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function (err, data) {
+    urllib.request(`https://recipes-goodness.herokuapp.com/recipes/${ingredient}`, function (err, data) {
         let recipes = JSON.parse(data.toString()).results
-
+            .map(recipe => {
+                return {
+                    title: recipe.title,
+                    ingredients: recipe.ingredients,
+                    thumbnail: recipe.thumbnail,
+                    href: recipe.href
+                }
+            })
         response.send(recipes)
     })
 })
