@@ -18,6 +18,20 @@
 
     </div>
 
+    <script id="recipes-template" type="text/x-handlebars-template">
+    {{#each recipes}}
+        <div class="recipe">
+            <h3 class="title"><a href={{href}}></a>{{title}}</h3>
+            <img src={{img}} alt=`image of {{title}}`>
+            <ul class="ingredients">
+                {{#each ingredients}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        
+        </div>
+    {{/each}}
+    </script>
 
     <link rel="stylesheet" href="./font-awesome/css/font-awesome.css">
     <script src="./jquery/dist/jquery.js"></script>
