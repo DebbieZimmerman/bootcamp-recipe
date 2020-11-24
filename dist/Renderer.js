@@ -1,8 +1,12 @@
 class Renderer {
-    render (data) {
+    constructor () {
+            }
+    render = (recipes) => {
     const source = $('#recipes-template').html()
     const template = Handlebars.compile(source)
-    const newHTML = template({data})
+    const newHTML = template({recipes})
     $('#recipes-container').empty().append(newHTML)
+    }
 }
-}
+
+const renderer = new Renderer

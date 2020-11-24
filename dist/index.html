@@ -21,9 +21,15 @@
     <script id="recipes-template" type="text/x-handlebars-template">
     {{#each recipes}}
         <div class="recipe">
-            <h3 class="title"><a href={{href}}></a>{{title}}</h3>
-            <img src={{img}} alt=`image of {{title}}`>
+            <h3 class="title"><a class="link" href={{href}}>{{title}}</a></h3>
+            <div class="recipe-image">
+            <img 
+                src={{thumbnail}}
+                onerror="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJpiCyqNrjtCRYgSEy744DDeE3IX3BHQM7Cg&usqp=CAU"
+            >
+        </div>
             <ul class="ingredients">
+                <div>Ingredients:</div>
                 {{#each ingredients}}
                     <li>{{this}}</li>
                 {{/each}}
@@ -33,7 +39,6 @@
     {{/each}}
     </script>
 
-    <link rel="stylesheet" href="./font-awesome/css/font-awesome.css">
     <script src="./jquery/dist/jquery.js"></script>
     <script src="./handlebars/dist/handlebars.js"></script>
     <script src="Renderer.js"></script>
